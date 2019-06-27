@@ -79,16 +79,28 @@ console.log(carThirtyThree.description());
 // The dealer needs the information on the last car in their inventory.  What is the make and model of the last car in the inventory?  Log the make and model into the console.
 let lastCar = inventory[49];
 
-console.log(lastCar);
+console.log(lastCar.car_make + lastCar.car_model);
 
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
-let carModels = [];
+let carModels = [];  /*so, what I believe that I need to do here is sort the current array but the only property I want is the car model property and I want to push that into a new array, that empty array is sitting here. I don't know what the solution looks like syntactically.*/
+
+
 console.log();
+//https://www.w3schools.com/js/js_array_sort.asp
+//https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
+/* cars.sort(function(a, b){
+  var x = a.type.toLowerCase();
+  var y = b.type.toLowerCase();
+  if (x < y) {return -1;}
+  if (x > y) {return 1;}
+  return 0;
+}); */
+
 
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
-let carYears = [];
+let carYears = []; /*Again, empty array to sort the model years into, I don't know what the solution looks like syntactically*/
 console.log();
 
 // ==== Challenge 5 ====
