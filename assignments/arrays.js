@@ -83,35 +83,68 @@ console.log(lastCar.car_make + lastCar.car_model);
 
 // ==== Challenge 3 ====
 // The marketing team wants the car models listed alphabetically on the website. Sort all the car model names into alphabetical order and log the results in the console
-let carModels = [];  /*so, what I believe that I need to do here is sort the current array but the only property I want is the car model property and I want to push that into a new array, that empty array is sitting here. I don't know what the solution looks like syntactically.*/
+let carModels = [];  /*So, the car models need to be sorted alphabetically and then that sorting order needs to be pushed into the empty array sitting here. I'm not sure what that last step looks like syntactically*/
+for (let i = 0; i < inventory.length; i++) {
+    let currentCarModel = inventory[i].car_model;  //what Derrick did is he created a variable, extracted the information and placed that information in the variable, and then pushed the variable into the empty array.
+    carModels.push(currentCarModel);
+    // carModels.push(inventory[i].car_model);
+}
+carModels.sort();
 
+console.log(carModels);
 
 console.log();
 //https://www.w3schools.com/js/js_array_sort.asp
 //https://www.sitepoint.com/sort-an-array-of-objects-in-javascript/
+//http://javascriptkit.com/javatutors/arraysort2.shtml
 /* cars.sort(function(a, b){
   var x = a.type.toLowerCase();
   var y = b.type.toLowerCase();
   if (x < y) {return -1;}
   if (x > y) {return 1;}
   return 0;
-}); */
+});
+employees.sort(function(a, b){
+    var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase()
+    if (nameA < nameB) //sort string ascending
+        return -1
+    if (nameA > nameB)
+        return 1
+    return 0 //default return value (no sorting)
+})
+*/
 
 
 // ==== Challenge 4 ====
 // The accounting team needs all the years from every car on the lot. Create a new array from the dealer data containing only the car years and log the result in the console.
 let carYears = []; /*Again, empty array to sort the model years into, I don't know what the solution looks like syntactically*/
-console.log();
+inventory.forEach(element => carYears.push(element.car_year))//concise arrow, for each element in the array, the element is the parameter, and we pushed the car year property of each element in the inventory array up into the empty array of car years*/
+
+console.log(carYears);
 
 // ==== Challenge 5 ====
 // The car lot manager needs to find out how many cars are older than the year 2000. Using the carYears array you just created, find out how many cars were made before the year 2000 by populating the array oldCars and logging it's length.
 let oldCars = [];
-console.log(); 
+for (let i = 0; i < carYears.length; i++){
+    if (carYears[i] < 2000) {
+        oldCars.push(carYears[i])
+    }
+}//so, this is not as concise as the one below, again with the concise body the oldCars can equal the array of carYears using the built in filter method to sift out the elements of the array that meet the older than the year 2000 criteria.
+
+let oldCars2 = carYears.filter(element => element < 2000)
+console.log(oldCars2.length);
+
+console.log(oldCars2);
+
+console.log(oldCars);
 
 // ==== Challenge 6 ====
 // A buyer is interested in seeing only BMW and Audi cars within the inventory.  Return an array that only contains BMW and Audi cars.  Once you have populated the BMWAndAudi array, use JSON.stringify() to show the results of the array in the console.
 let BMWAndAudi = [];
 console.log();
 
-
+//let stringify = JSON.stringify(BMWAndAudi);
+//
+// console.log(stringify)
+//So, what exactly is the json. , why are we using the word and here?  this is really concise, better than a for loop and it accomplishes the same thing in less code*/
 
