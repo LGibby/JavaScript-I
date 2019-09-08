@@ -80,24 +80,39 @@ console.log(antonietta.multiplyNums(8,67));
 let parent = new Object(){
   parent.name = "Susan";
   parent.age = 70;
+  parent.speak = function(){
+    return 'Hello, my name is ' + this.name + 'and I am ' + this.age + 'years old.'
+  };
   let child = new Object(){
     child.name = "George";
     child.age = 50;
+    child.speak = function(){
+      return 'Hello, my name is ' + this.name + 'and I am ' + this.age + 'years old.'
+    };
     let grandchild = new Object(){
       grandchild.name = "Sam";
       grandchild.age = 30;
+      grandchild.speak = function(){
+        return 'Hello, my name is ' + this.name + 'and I am ' + this.age + 'years old.'
+      };
     }
   }
-}
+}//why did we make these nested objects? I mean, they look pretty but what was the objective.
 
 // Log the parent object's name
+console.log(parent.name);
 
 // Log the child's age
+console.log(child.age);
 
 // Log the name and age of the grandchild
+console.log(grandchild.name + grandchild.age);
 
 // Have the parent speak
+console.log(parent.speak());
 
 // Have the child speak
+console.log(child.speak());
 
 // Have the grandchild speak
+console.log(grandchild.speak());
