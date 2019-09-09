@@ -55,11 +55,13 @@ let inventory = [{"id":1,"car_make":"Lincoln","car_model":"Navigator","car_year"
 
 
 // Example for loop:
-
 // arr = [1,2,3,4];
 // for (let i = 0; i < arr.length; i++) {
 //     arr[i]; // 1,2,3,4
 // }
+let audi = inventory.filter(inventory => {return inventory.car_make === "Audi"});
+let dodge = inventory.filter(inventory => {return inventory.car_make === "Dodge"});
+
 
 // ==== Challenge 1 ====
 // The dealer can't recall the information for a car with an id of 33 on his lot. Help the dealer find out which car has an id of 33 by logging the car's year, make, and model in the console log provided to you below:
@@ -67,7 +69,7 @@ console.log(`Car 33 is a *car year goes here* *car make goes here* *car model go
 
 let carThirtyThree = inventory[32];
 
-console.log(carThirtyThree);
+//for loop, then block that has if statement that says if inventory[i] === [32]  return 'This vehicle is a ' + this.car_year + this.car_make + this.car_model + 'and is car number' + this.id + ' on our lot today';
 
 carThirtyThree.description = function(){
     return 'This vehicle is a ' + this.car_year + this.car_make + this.car_model + 'and is car number' + this.id + ' on our lot today';
@@ -103,7 +105,7 @@ console.log();
   if (x < y) {return -1;}
   if (x > y) {return 1;}
   return 0;
-});
+});git add . 
 employees.sort(function(a, b){
     var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase()
     if (nameA < nameB) //sort string ascending
